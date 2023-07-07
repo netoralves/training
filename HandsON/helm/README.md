@@ -177,7 +177,7 @@ oc expose service famousapp-famouschart
 
 6.2. Chame o endpoint /random do aplicativo implantado:
 ```
-FAMOUS_URL=$(oc get route -n ${RHT_OCP4_DEV_USER}-multicontainer-helm famousapp-famouschart -o jsonpath='{.spec.host}'/random)
+FAMOUS_URL=$(oc get route famousapp-famouschart -o jsonpath='{.spec.host}'/random)
 
 curl $FAMOUS_URL
 8: Those who can imagine anything, can create the impossible.
