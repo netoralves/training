@@ -4,6 +4,7 @@
 https://github.com/helm/helm/releases
 
 2. Depois de baixar e publicar no PATH da sua estação de trabalho, teste o uso:
+
 ```
 helm version
 
@@ -15,11 +16,13 @@ version.BuildInfo{Version:"v3.12.1", GitCommit:"f32a527a060157990e2aa86bf45010df
 1. Crie um novo helm chart:
 
 1.1. Crie um helm chart chamado famouschart:
+
 ```
 helm create famouschart
 ```
 
 1.2. Verifique a estrutura de arquivos
+
 ```
 cd famouschart
 ls
@@ -57,6 +60,7 @@ image:
   repository: quay.io/redhattraining/famous-quotes
   pullPolicy: IfNotPresent
   tag: “2.1”
+```
 
 2.2. Certifique-se de que o contêiner use a porta correta para se conectar ao aplicativo.
 No arquivo ```templates/deployment.yaml```, altere a propriedade ```containerPort``` incluída na seção ```containers``` para que ela use o valor 8000.
@@ -76,6 +80,7 @@ O aplicativo Famous Quotes usa um banco de dados para armazenar as citações; p
 
 3.1. Adicione a dependência mariadb ao gráfico do aplicativo.
 Para fazer isso, adicione o seguinte trecho ao final do arquivo Chart.yaml:
+
 ```
 dependencies:
 - name: mariadb
@@ -128,6 +133,7 @@ env:
 ```
 
 4.2. Adicione as variáveis de ambiente apropriadas ao final do arquivo ```values.yaml```:
+
 ```
 env:
   - name: "QUOTES_HOSTNAME"
