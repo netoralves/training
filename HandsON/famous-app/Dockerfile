@@ -1,7 +1,7 @@
 FROM registry.redhat.io/rhel8/go-toolset:latest
 
 ENV QUOTES_VERSION=2.1 \
-    SUMMARY="Famous Quotes" \
+    SUMMARY="Famous Apps" \
     DESCRIPTION="Famous Quotes is a PoC application for Go and MySQL"
 
 LABEL summary="$SUMMARY" \
@@ -10,9 +10,9 @@ LABEL summary="$SUMMARY" \
       io.k8s.display-name="Quotes 2.1" \
       io.openshift.expose-services="8000:quotes" \
       io.openshift.tags="poc,mysql,golang" \
-      name="redhattraining/famous-quotes" \
+      name="netoralves/famous-app" \
       version="2.1" \
-      usage="docker run -d -e QUOTES_USER=user -e QUOTES_PASSWORD=pass -e QUOTES_DATABASE=db -p 8000:8000 redhattraining/famous-quotes"
+      usage="podman run -d -e DATABASE_USER=user -e DATABASE_PASSWORD=pass -e DATABASE_NAME=famousdb -p 8000:8000 https://quay.io/repository/netoralves/famous-app"
 
 EXPOSE 8000
 
