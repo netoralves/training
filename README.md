@@ -2,5 +2,5 @@
     :construction:  Projeto em construção  :construction:
 </h4>
 
-# Trainning
+# Training
 For DevOps or Openshift Students.
